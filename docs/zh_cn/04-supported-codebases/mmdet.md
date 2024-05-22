@@ -10,6 +10,7 @@
   - [后端模型推理](#后端模型推理)
   - [SDK 模型推理](#sdk-模型推理)
   - [模型支持列表](#模型支持列表)
+  - [注意事项](#注意事项)
 
 ______________________________________________________________________
 
@@ -216,10 +217,12 @@ cv2.imwrite('output_detection.png', img)
 |                 [CenterNet](https://github.com/open-mmlab/mmdetection/tree/main/configs/centernet)                  |   Object Detection    |      Y      |    Y     |  N   |   ?   |    Y     |
 |                    [RTMDet](https://github.com/open-mmlab/mmdetection/tree/main/configs/rtmdet)                     |   Object Detection    |      Y      |    Y     |  N   |   ?   |    Y     |
 |           [Cascade Mask R-CNN](https://github.com/open-mmlab/mmdetection/tree/main/configs/cascade_rcnn)            | Instance Segmentation |      Y      |    Y     |  N   |   N   |    Y     |
+|                       [HTC](https://github.com/open-mmlab/mmdetection/tree/main/configs/htc)                        | Instance Segmentation |      Y      |    Y     |  N   |   ?   |    Y     |
 |                 [Mask R-CNN](https://github.com/open-mmlab/mmdetection/tree/main/configs/mask_rcnn)                 | Instance Segmentation |      Y      |    Y     |  N   |   N   |    Y     |
 |                [Swin Transformer](https://github.com/open-mmlab/mmdetection/tree/main/configs/swin)                 | Instance Segmentation |      Y      |    Y     |  N   |   N   |    Y     |
 |                      [SOLO](https://github.com/open-mmlab/mmdetection/tree/main/configs/solo)                       | Instance Segmentation |      Y      |    N     |  N   |   N   |    Y     |
 |                    [SOLOv2](https://github.com/open-mmlab/mmdetection/tree/main/configs/solov2)                     | Instance Segmentation |      Y      |    N     |  N   |   N   |    Y     |
+|                  [CondInst](https://github.com/open-mmlab/mmdetection/tree/main/configs/condinst)                   | Instance Segmentation |      Y      |    Y     |  N   |   N   |    N     |
 |              [Panoptic FPN](https://github.com/open-mmlab/mmdetection/tree/main/configs/panoptic_fpn)               | Panoptic Segmentation |      Y      |    Y     |  N   |   N   |    N     |
 |                [MaskFormer](https://github.com/open-mmlab/mmdetection/tree/main/configs/maskformer)                 | Panoptic Segmentation |      Y      |    Y     |  N   |   N   |    N     |
 |      [Mask2Former](https://github.com/open-mmlab/mmdetection/tree/main/configs/mask2former)[\*](#mask2former)       | Panoptic Segmentation |      Y      |    Y     |  N   |   N   |    N     |

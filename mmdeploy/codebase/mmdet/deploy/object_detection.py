@@ -60,7 +60,7 @@ def process_model_config(model_cfg: Config,
     if isinstance(imgs[0], np.ndarray):
         cfg = cfg.copy()
         # set loading pipeline type
-        cfg.test_pipeline[0].type = 'LoadImageFromNDArray'
+        cfg.test_pipeline[0].type = 'mmdet.LoadImageFromNDArray'
 
     pipeline = cfg.test_pipeline
 
@@ -70,8 +70,10 @@ def process_model_config(model_cfg: Config,
             if transform.type == 'Resize':
                 pipeline[i].keep_ratio = False
                 pipeline[i].scale = tuple(input_shape)
-            if transform.type in ('YOLOv5KeepRatioResize', 'LetterResize'):
+            elif transform.type in ('YOLOv5KeepRatioResize', 'LetterResize'):
                 pipeline[i].scale = tuple(input_shape)
+            elif transform.type == 'Pad' and 'size' in transform:
+                pipeline[i].size = tuple(input_shape)
 
     pipeline = [
         transform for transform in pipeline
@@ -317,6 +319,11 @@ class ObjectDetection(BaseTask):
         if 'mask_thr_binary' in params:
             type = 'ResizeInstanceMask'  # for instance-seg
             # resize and crop mask to origin image
+            params['is_resize_mask'] = True
+        if 'mask_thr' in params:
+            type = 'ResizeInstanceMask'  # for instance-seg
+            # resize and crop mask to origin image
+            params['mask_thr_binary'] = params['mask_thr']
             params['is_resize_mask'] = True
 
         if get_backend(self.deploy_cfg) == Backend.RKNN:
