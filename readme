@@ -1,0 +1,9 @@
+conda actviate mmrotate_dev1
+cd /mmrotate_dev1/mmrotate
+python tools/train.py work_dirs/mytrain_r_rtmdet/700_train_config.py
+
+dataset
+img_prefix='data/can_pan_700_v1.00/trainval/images/
+img_prefix='data/can_pan_700_v1.00/test/images/
+img_prefix='data/can_pan_700_v1.00/trainval/annfiles/
+img_prefix='data/can_pan_700_v1.00/test/annfiles/
